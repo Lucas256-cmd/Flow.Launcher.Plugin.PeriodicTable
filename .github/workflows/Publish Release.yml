@@ -1,5 +1,6 @@
 name: Publish Release
-
+permissions:
+  contents: write
 on:
   workflow_dispatch:
   push:
@@ -9,8 +10,6 @@ on:
 
 jobs:
   publish:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     env:
       python_ver: 3.11
