@@ -8,26 +8,31 @@ class Main(FlowLauncher):
             return [
                 {
                     "title": "OOPS THIS IS NOT A PERIODIC ELEMENT",
-                    "subTitle": "Blobfish is a deep sea fish that inhabits the deep waters off the coasts of Australia and Tasmania.",
+                    "subTitle": "The Blobfish is a deep sea fish that inhabits the deep waters of the Atlantic and Pacific Ocean. The blobfish has a short, broad tongue and conical teeth that are slightly recurved and are arranged in bands in irregular rows along the premaxillaries (whatever this word may mean).",
                     "icoPath": "Images/app.png",
                     "score": 0
                 },
                 {
-                    "title": "info",
-                    "subTitle": "https://www.wikiwand.com/en/articles/Psychrolutidae",
-                    "jsonRPCAction": {
-                        "method": "open_url",
-                        "parameters": ["https://www.wikiwand.com/en/articles/Psychrolutidae"]
-                    },
-                    "icoPath": "Images/app.png",
-                    "score": 0
+                    "title": "I don't even know why you searched for this",
+                    "subTitle": "But here is a picture of a Blobfish",
+                    "icoPath": "Images/b.png",
                 },
                 {
                     "title": "If you want to see the full message use ctrl + ]",
                     "subTitle": "And ctrl + [ to set it back to normal",
                     "icoPath": "Images/app.png",
                     "score": 0
-                }
+                },
+                {
+                    "title": "more info",
+                    "subTitle": "https://en.wikipedia.org/wiki/Psychrolutidae",
+                    "jsonRPCAction": {
+                        "method": "open_url",
+                        "parameters": ["https://en.wikipedia.org/wiki/Psychrolutidae"]
+                    },
+                    "icoPath": "Images/app.png",
+                    "score": 0
+                },
             ]
         try:
             param_element = periodictable.elements.symbol(param)
