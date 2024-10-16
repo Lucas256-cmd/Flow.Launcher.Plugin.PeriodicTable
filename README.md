@@ -29,4 +29,5 @@ Also note that the symbol is case-sensitive so `pt h` won't work but `pt H` will
 
 P.S. This is my frist real contribution to an open source project. I hope you like it. If you have any suggestions or
 improvements, please let me know.
+
 Plugin icon from: [https://www.flaticon.com/free-icons/periodic-table](https://www.flaticon.com/free-icons/periodic-table)
