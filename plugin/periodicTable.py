@@ -1,15 +1,16 @@
 from flowlauncher import FlowLauncher
 import periodictable
+import webbrowser
 
 class Main(FlowLauncher):
     def query(self, param: str = '') -> list:
         # easteregg
-        if param == "Blobfish":
+        if param.lower() == "blobfish":
             return [
                 {
                     "title": "OOPS THIS IS NOT A PERIODIC ELEMENT",
                     "subTitle": "The Blobfish is a deep sea fish that inhabits the deep waters of the Atlantic and Pacific Ocean. The blobfish has a short, broad tongue and conical teeth that are slightly recurved and are arranged in bands in irregular rows along the premaxillaries (whatever this word may mean).",
-                    "icoPath": "Images/app.png",
+                    "icoPath": "Images/b.png",
                     "score": 0
                 },
                 {
@@ -18,9 +19,9 @@ class Main(FlowLauncher):
                     "icoPath": "Images/b.png",
                 },
                 {
-                    "title": "If you want to see the full message use ctrl + ]",
+                    "title": "If you want to see the full message of the first result use ctrl + ]",
                     "subTitle": "And ctrl + [ to set it back to normal",
-                    "icoPath": "Images/app.png",
+                    "icoPath": "Images/b.png",
                     "score": 0
                 },
                 {
@@ -30,7 +31,7 @@ class Main(FlowLauncher):
                         "method": "open_url",
                         "parameters": ["https://en.wikipedia.org/wiki/Psychrolutidae"]
                     },
-                    "icoPath": "Images/app.png",
+                    "icoPath": "Images/b.png",
                     "score": 0
                 },
             ]
@@ -62,3 +63,6 @@ class Main(FlowLauncher):
                 }
             ]
         return result
+
+    def open_url(self, url):
+        webbrowser.open(url)
