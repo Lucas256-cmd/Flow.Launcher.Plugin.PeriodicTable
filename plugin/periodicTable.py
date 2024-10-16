@@ -1,17 +1,13 @@
 from flowlauncher import FlowLauncher
-from mendeleev import element
-
+import periodictable
 
 class Main(FlowLauncher):
     def query(self, param: str = '') -> list:
         try:
-            param_element = element(param)
-            atomic_number = str(param_element.atomic_number)
-            atomic_weight = str(param_element.atomic_weight)
-            boiling_point = str(param_element.boiling_point)
-            melting_point = str(param_element.melting_point)
-            discovery_year = str(param_element.discovery_year)
-            return [
+            param_element = periodictable.elements.symbol(param)
+            atomic_number = str(param_element.number)
+            atomic_weight = str(param_element.mass)
+            result = [
                 {
                     "title": param_element.name,
                     "subTitle": param_element.symbol,
@@ -24,20 +20,9 @@ class Main(FlowLauncher):
                     "icoPath": "Images/app.png",
                     "score": 0
                 },
-                {
-                    "title": "Boiling Point: " + boiling_point,
-                    "subTitle": "Melting Point: " + melting_point,
-                    "icoPath": "Images/app.png",
-                    "score": 0
-                },
-                {
-                    "title": "Year Discovered: " + discovery_year,
-                    "icoPath": "Images/app.png",
-                    "score": 0
-                }
             ]
         except ValueError:
-            return [
+            result = [
                 {
                     "title": "Element not found",
                     "subTitle": "Element is case sensitive",
@@ -45,3 +30,4 @@ class Main(FlowLauncher):
                     "score": 0
                 }
             ]
+        return result
