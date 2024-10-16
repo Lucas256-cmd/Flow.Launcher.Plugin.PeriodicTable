@@ -1,10 +1,10 @@
 {
-    "ID": "placeholder",
+    "ID": "3998f3c6-1271-4590-a715-0f2a5745851c",
     "ActionKeyword": "pt",
     "Name": "Periodic table",
-    "Description": "Plugin to get element properties by element symbol",
+    "Description": "Get element properties by element symbol",
     "Author": "Lucas256-cmd",
-    "Version": "0.0.1",
+    "Version": "0.8.0",
     "Language": "python",
     "Website": "https://github.com/Lucas256-cmd/Flow.Launcher.Plugin.PeriodicTable",
     "IcoPath": "Images\\app.png",
