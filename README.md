@@ -1,6 +1,7 @@
 # Flow.Launcher.Plugin.PeriodicTable
 
-This is a plugin for Flow Launcher to get key characteristics of an element in the periodic table by the symbol name
+This is a plugin for Flow Launcher to get key characteristics of an element in the periodic table by the symbol name.
+It uses the periodictable library to get the information.
 
 ## Usage
 
@@ -16,15 +17,12 @@ This will return the following information:
 - Symbol
 - Atomic Number
 - Atomic Mass
-- Boiling Point
-- Melting Point
-- Year of Discovery
 
-Also note that the symbol is case sensitive so `pt h` won't work but `pt H` will.
+Also note that the symbol is case-sensitive so `pt h` won't work but `pt H` will.
 
 ## Possible future improvements
 
-- [ ] Element lookup is too slow. Find a way to speed it up
+- [x] Element lookup is too slow. Find a way to speed it up
 - [ ] Add more information about the element
 
 #
