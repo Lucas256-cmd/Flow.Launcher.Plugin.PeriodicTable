@@ -60,29 +60,27 @@ class Element:
                 'named_by'] else "Named by unknown or not in database"
 
     def partial_match(self, element_name_or_symbol):
-        # only run this if element_name_or_symbol is not "" else every element will be matched and the last element will be returned
         if element_name_or_symbol != "":
-            # first try to find a partial match in the element name
+            # First, try to find elements whose names or symbols start with the input string
             for name, element in periodic_table.items():
-                if name != "order" and (element_name_or_symbol.lower() in name):
-                    # if a partial match is found, set the element name and symbol
+                if name != "order" and (name.startswith(element_name_or_symbol.lower()) or element['symbol'].startswith(
+                        element_name_or_symbol.capitalize())):
                     self.name = name
                     self.symbol = element['symbol']
-                    break
-            if self.name is None:
-                # if no partial match is found in the element name, try to find a partial match in the element symbol
-                # this is a very rare case because the element symbol is usually only 1 or 2 characters long
-                # it is still included for completeness
-                for name, element in periodic_table.items():
-                    if name != "order" and (element_name_or_symbol.lower() in element['symbol'].lower()):
-                        self.name = name
-                        self.symbol = element['symbol']
-                        break
-            if self.name is None:
-                # if no partial match is found in the element name or symbol, raise a ValueError
-                raise ValueError("Element not found")
+                    return
+
+            # If no elements start with the input string, try to find partial matches within the string
+            for name, element in periodic_table.items():
+                if name != "order" and (
+                        element_name_or_symbol.lower() in name or element_name_or_symbol.capitalize() in element[
+                    'symbol']):
+                    self.name = name
+                    self.symbol = element['symbol']
+                    return
+
+            # If no matches are found, raise a ValueError
+            raise ValueError("Element not found")
         else:
-            # if no element is entered, raise a ValueError
             raise ValueError("No element entered")
 
 
