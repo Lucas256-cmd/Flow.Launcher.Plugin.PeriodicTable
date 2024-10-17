@@ -37,8 +37,10 @@ class Element:
 
 
         self.element_dict = get_element_dict(self.name)
-        self.atomic_number = str(self.element_dict['number'])
-        self.atomic_mass = str(self.element_dict['atomic_mass'])
+        self.atomic_number = str(self.element_dict['number']) if self.element_dict[
+            'number'] else "Unknown or not in database"
+        self.atomic_mass = str(self.element_dict['atomic_mass']) if self.element_dict[
+            'atomic_mass'] else "Unknown or not in database"
         self.boiling_point = (str(self.element_dict['boil']) + " K") if self.element_dict[
             'boil'] else "Unknown or not in database"
         self.melting_point = (str(self.element_dict['melt']) + " K") if self.element_dict[
