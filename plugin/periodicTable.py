@@ -1,6 +1,6 @@
 from flowlauncher import FlowLauncher
-import periodictable
 import webbrowser
+import JSONLookup
 
 class Main(FlowLauncher):
     def query(self, param: str = '') -> list:
@@ -37,12 +37,14 @@ class Main(FlowLauncher):
                 },
             ]
         try:
-            param_element = periodictable.elements.symbol(param)
-            atomic_number = str(param_element.number)
-            atomic_weight = str(param_element.mass)
+            param_element = JSONLookup.Element(param)
+            atomic_number = param_element.atomic_number
+            atomic_weight = param_element.atomic_mass
+            boiling_point = param_element.boiling_point
+            melting_point = param_element.melting_point
             result = [
                 {
-                    "title": param_element.name,
+                    "title": param_element.name.capitalize(),
                     "subTitle": param_element.symbol,
                     "icoPath": "Images/app.png",
                     "score": 2
@@ -53,6 +55,12 @@ class Main(FlowLauncher):
                     "icoPath": "Images/app.png",
                     "score": 1
                 },
+                {
+                    "title": "Boiling Point: " + boiling_point + " K",
+                    "subTitle": "Melting Point: " + melting_point + " K",
+                    "icoPath": "Images/app.png",
+                    "score": 0
+                }
             ]
         except ValueError:
             result = [
