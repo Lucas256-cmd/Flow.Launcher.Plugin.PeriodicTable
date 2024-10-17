@@ -24,6 +24,7 @@ Also note that the symbol is case-sensitive so `pt h` won't work but `pt H` will
 
 - [x] Element lookup is too slow. Find a way to speed it up.
 - [x] Add more information about the element.
+- [ ] Add search completion
 - [ ] Make improvements based on user feedback if there is any.
 
 ## Thanks to
