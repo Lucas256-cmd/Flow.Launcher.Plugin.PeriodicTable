@@ -66,7 +66,6 @@ class Main(FlowLauncher):
             result = [
                 {
                     "title": "Element not found",
-                    "subTitle": "Element is case sensitive",
                     "icoPath": "Images/app.png",
                     "score": 0
                 }
