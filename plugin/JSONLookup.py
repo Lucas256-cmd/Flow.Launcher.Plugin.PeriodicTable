@@ -2,7 +2,7 @@ import json
 
 # periodic-table-lookup.json first contains a list called "order" which contains the order of the elements in the periodic table
 # Then it contains a dictionary for each element with the element name as the key.
-with open('periodic-table-lookup.json', encoding="utf8") as f:
+with open('../periodic-table-lookup.json', encoding="utf8") as f:
     periodic_table = json.load(f)
 
 # Function to get the element name by its key
@@ -61,7 +61,7 @@ class Element:
                     break
             if self.name is None:
                 for name, element in periodic_table.items():
-                    if name != "order" and (element_name_or_symbol.lower() in element['symbol']):
+                    if name != "order" and (element_name_or_symbol.lower() in element['symbol'].lower()):
                         self.name = name
                         self.symbol = element['symbol']
                         break
