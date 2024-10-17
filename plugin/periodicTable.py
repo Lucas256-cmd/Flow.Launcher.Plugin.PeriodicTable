@@ -83,7 +83,7 @@ class Main(FlowLauncher):
                 result = [
                     {
                         "title": "Element not found",
-                        "subTitle": "This plugin has no autocomplete feature (yet), you have to type the FULL name or symbol of the element.",
+                        "subTitle": "Please enter a valid element name or symbol.",
                         "icoPath": "Images/app.png",
                         "score": 0,
                         "ContextData": {"title": "Element not found"}
@@ -102,16 +102,7 @@ class Main(FlowLauncher):
         return result
 
     def context_menu(self, data):
-        if data['title'] == "Element not found":
-            return [
-                {
-                    "title": "This plugin has no autocomplete feature (yet).",
-                    "subTitle": "You have to type the FULL name or symbol of the element.",
-                    "score": 0,
-                    "icoPath": "Images/app.png",
-                }
-            ]
-        elif data['title'] == "Blobfish":
+        if data['title'] == "Blobfish":
             return [
                 {
                     "title": "The Blobfish is a deep sea fish that inhabits the deep waters of the Atlantic and Pacific Ocean.",
