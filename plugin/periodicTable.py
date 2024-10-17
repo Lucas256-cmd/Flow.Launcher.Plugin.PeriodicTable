@@ -9,6 +9,8 @@ def open_url(url):
 
 class Main(FlowLauncher):
     def query(self, param: str = '') -> list:
+        result = []
+
         # easteregg
         if param.lower() == "blobfish":
             return [
@@ -52,7 +54,7 @@ class Main(FlowLauncher):
             named_by = param_element.named_by
             result = [
                 {
-                    "title": param_element.name.capitalize(),
+                    "title": param_element.name,
                     "subTitle": param_element.symbol,
                     "icoPath": "Images/app.png",
                     "score": 3
@@ -76,16 +78,27 @@ class Main(FlowLauncher):
                     "score": 0
                 }
             ]
-        except ValueError:
-            result = [
-                {
-                    "title": "Element not found",
-                    "subTitle": "This plugin has no autocomplete feature (yet), you have to type the FULL name or symbol of the element.",
-                    "icoPath": "Images/app.png",
-                    "score": 0,
-                    "ContextData": {"title": "Element not found"}
-                }
-            ]
+        except ValueError as e:
+            if str(e) == "Element not found":
+                result = [
+                    {
+                        "title": "Element not found",
+                        "subTitle": "This plugin has no autocomplete feature (yet), you have to type the FULL name or symbol of the element.",
+                        "icoPath": "Images/app.png",
+                        "score": 0,
+                        "ContextData": {"title": "Element not found"}
+                    }
+                ]
+            elif str(e) == "No element entered":
+                result = [
+                    {
+                        "title": "No element entered",
+                        "subTitle": "Please enter an element name or symbol.",
+                        "icoPath": "Images/app.png",
+                        "score": 0
+                    }
+                ]
+
         return result
 
     def context_menu(self, data):
