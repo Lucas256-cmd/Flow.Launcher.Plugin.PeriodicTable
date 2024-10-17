@@ -45,6 +45,7 @@ class Main(FlowLauncher):
                 },
             ]
         try:
+            # try to get the element from the Element class
             param_element = JSONLookup.Element(param)
             atomic_number = param_element.atomic_number
             atomic_weight = param_element.atomic_mass
@@ -52,6 +53,7 @@ class Main(FlowLauncher):
             melting_point = param_element.melting_point
             discoverer = param_element.discoverer
             named_by = param_element.named_by
+            # if the element is found, create a result list with the element information
             result = [
                 {
                     "title": param_element.name,
@@ -79,6 +81,7 @@ class Main(FlowLauncher):
                 }
             ]
         except ValueError as e:
+            # if the Element class raises a ValueError, create a result list with a corresponding error message
             if str(e) == "Element not found":
                 result = [
                     {
@@ -98,11 +101,11 @@ class Main(FlowLauncher):
                         "score": 0
                     }
                 ]
-
         return result
 
     def context_menu(self, data):
         if data['title'] == "Blobfish":
+            # hmm, what would this code do???
             return [
                 {
                     "title": "The Blobfish is a deep sea fish that inhabits the deep waters of the Atlantic and Pacific Ocean.",
