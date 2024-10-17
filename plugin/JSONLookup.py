@@ -2,7 +2,7 @@ import json
 
 # periodic-table-lookup.json first contains a list called "order" which contains the order of the elements in the periodic table
 # Then it contains a dictionary for each element with the element name as the key.
-with open('../periodic-table-lookup.json', encoding="utf8") as f:
+with open('periodic-table-lookup.json', encoding="utf8") as f:
     periodic_table = json.load(f)
 
 
