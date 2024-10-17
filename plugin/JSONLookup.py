@@ -37,19 +37,7 @@ class Element:
 
 
         self.element_dict = get_element_dict(self.name)
-        self.atomic_number = self.get_atomic_number()
-        self.atomic_mass = self.get_atomic_mass()
-        self.boiling_point = self.get_boiling_point()
-        self.melting_point = self.get_melting_point()
-
-    def get_atomic_number(self):
-        return self.element_dict['number']
-
-    def get_atomic_mass(self):
-        return self.element_dict['atomic_mass']
-
-    def get_boiling_point(self):
-        return self.element_dict['boil']
-
-    def get_melting_point(self):
-        return self.element_dict['melt']
+        self.atomic_number = str(self.element_dict['number'])
+        self.atomic_mass = str(self.element_dict['atomic_mass'])
+        self.boiling_point = str(self.element_dict['boil'])
+        self.melting_point = str(self.element_dict['melt'])
