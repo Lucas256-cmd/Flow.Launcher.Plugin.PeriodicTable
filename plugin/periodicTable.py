@@ -48,22 +48,30 @@ class Main(FlowLauncher):
             atomic_weight = param_element.atomic_mass
             boiling_point = param_element.boiling_point
             melting_point = param_element.melting_point
+            discoverer = param_element.discoverer
+            named_by = param_element.named_by
             result = [
                 {
                     "title": param_element.name.capitalize(),
                     "subTitle": param_element.symbol,
                     "icoPath": "Images/app.png",
-                    "score": 2,
+                    "score": 3
                 },
                 {
                     "title": "Atomic Number: " + atomic_number,
                     "subTitle": "Atomic Mass: " + atomic_weight,
                     "icoPath": "Images/app.png",
+                    "score": 2
+                },
+                {
+                    "title": "Boiling Point: " + boiling_point,
+                    "subTitle": "Melting Point: " + melting_point,
+                    "icoPath": "Images/app.png",
                     "score": 1
                 },
                 {
-                    "title": "Boiling Point: " + boiling_point + " K",
-                    "subTitle": "Melting Point: " + melting_point + " K",
+                    "title": "Discovered by: " + discoverer,
+                    "subTitle": "Named by: " + named_by,
                     "icoPath": "Images/app.png",
                     "score": 0
                 }
