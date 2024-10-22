@@ -50,9 +50,9 @@ class Element:
                 'number'] else "Unknown or not in database"
             self.atomic_mass = str(self.element_dict['atomic_mass']) if self.element_dict[
                 'atomic_mass'] else "Unknown or not in database"
-            self.boiling_point = (str(self.element_dict['boil']) + " K") if self.element_dict[
+            self.boiling_point = (str(self.element_dict['boil']) + "K") if self.element_dict[
                 'boil'] else "Unknown or not in database"
-            self.melting_point = (str(self.element_dict['melt']) + " K") if self.element_dict[
+            self.melting_point = (str(self.element_dict['melt']) + "K") if self.element_dict[
                 'melt'] else "Unknown or not in database"
             self.discoverer = self.element_dict['discovered_by'] if self.element_dict[
                 'discovered_by'] else "Discovered by unknown or not in database"
