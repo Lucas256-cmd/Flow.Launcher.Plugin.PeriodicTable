@@ -1,5 +1,8 @@
 # Flow.Launcher.Plugin.PeriodicTable
 
+> [!NOTE]
+> I would recomend using [This](https://github.com/asmpro7/ElementFlow) plugin instead of mine because it has way more information.
+
 This is a plugin for Flow Launcher to get key characteristics of an element in the periodic table.
 It uses a json file (by Bowserinator, see below) to get the characteristics. If a characteristic is incorrect, please
 create an
