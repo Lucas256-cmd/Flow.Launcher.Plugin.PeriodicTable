@@ -3,10 +3,6 @@ import webbrowser
 import JSONLookup
 
 
-def open_url(url):
-    webbrowser.open(url)
-
-
 class Main(FlowLauncher):
     def query(self, param: str = '') -> list:
         result = []
@@ -56,6 +52,12 @@ class Main(FlowLauncher):
             # if the element is found, create a result list with the element information
             result = [
                 {
+                    "title": "This plugin will go away soon, use ElementFlow plugin instead.",
+                    "subTitle": "It is just better, if you have improvments for ElementFlow you can alwas open a new issue.",
+                    "icoPath": "Images/app.png",
+                    "score": 4
+                },
+                {
                     "title": param_element.name,
                     "subTitle": param_element.symbol,
                     "icoPath": "Images/app.png",
@@ -85,6 +87,12 @@ class Main(FlowLauncher):
             if str(e) == "Element not found":
                 result = [
                     {
+                        "title": "This plugin will go away soon, use ElementFlow plugin instead.",
+                        "subTitle": "It is just better, if you have improvments for ElementFlow you can alwas open a new issue.",
+                        "icoPath": "Images/app.png",
+                        "score": 1
+                    },
+                    {
                         "title": "Element not found",
                         "subTitle": "Please enter a valid element name or symbol.",
                         "icoPath": "Images/app.png",
@@ -94,6 +102,12 @@ class Main(FlowLauncher):
                 ]
             elif str(e) == "No element entered":
                 result = [
+                    {
+                        "title": "This plugin will go away soon, use ElementFlow plugin instead.",
+                        "subTitle": "It is just better, if you have improvments for ElementFlow you can alwas open a new issue.",
+                        "icoPath": "Images/app.png",
+                        "score": 1
+                    },
                     {
                         "title": "No element entered",
                         "subTitle": "Please enter an element name or symbol.",
@@ -120,3 +134,5 @@ class Main(FlowLauncher):
                     "score": 0
                 }
             ]
+    def open_url(self, url):
+        webbrowser.open(url)
