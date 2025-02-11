@@ -4,7 +4,7 @@
     "Name": "Periodic table",
     "Description": "Get element properties by element symbol",
     "Author": "Lucas256-cmd",
-    "Version": "0.9.10",
+    "Version": "0.9.11",
     "Language": "python",
     "Website": "https://github.com/Lucas256-cmd/Flow.Launcher.Plugin.PeriodicTable",
     "IcoPath": "Images\\app.png",
