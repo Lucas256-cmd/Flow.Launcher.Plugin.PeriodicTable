@@ -1,5 +1,8 @@
 # Flow.Launcher.Plugin.PeriodicTable
 
+> [!IMPORTANT]  
+> Plugin now archived see note below.
+
 > [!NOTE]
 > I would recomend using [This](https://github.com/asmpro7/ElementFlow) plugin instead of mine because it has way more information.
 
